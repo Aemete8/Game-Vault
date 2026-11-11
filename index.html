@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="GameVault: biblioteca virtual de videojuegos. Explora, filtra y descubre qué jugar."
+        />
+        <title>GameVault | Biblioteca virtual de videojuegos</title>
+        <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <a class="skip" href="#catalogo">Ir al catálogo</a>
+
+        <header class="site-header">
+            <div class="container bar">
+                <a class="brand" href="#inicio"
+                    ><img src="img/logo.svg" alt="" width="36" height="36" />
+                    GameVault</a
+                >
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    aria-expanded="false"
+                    aria-controls="menu"
+                    aria-label="Abrir menú"
+                >
+                    <span></span><span></span><span></span>
+                </button>
+                <nav aria-label="Principal">
+                    <ul id="menu" class="menu">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#destacados">Destacados</a></li>
+                        <li><a href="#resenas">Reseñas</a></li>
+                        <li><a href="#faq">Preguntas</a></li>
+                        <li>
+                            <a class="btn btn-small" href="#contacto"
+                                >Sugerir un juego</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section id="inicio" class="hero">
+                <div class="container hero-grid">
+                    <div>
+                        <h1>Tu próxima partida ya está guardada aquí.</h1>
+                        <p class="lead">
+                            GameVault reúne videojuegos por género y plataforma,
+                            con su ficha y las opiniones de otros jugadores,
+                            para que elijas qué jugar sin perder la tarde
+                            buscando.
+                        </p>
+                        <div class="actions">
+                            <a class="btn" href="#catalogo"
+                                >Explorar catálogo</a
+                            >
+                            <a class="btn btn-ghost" href="#contacto"
+                                >Sugerir un juego</a
+                            >
+                        </div>
+                    </div>
+                    <img
+                        class="hero-img"
+                        src="img/hero.svg"
+                        alt="Control de videojuegos junto a una colección de juegos"
+                        width="520"
+                        height="360"
+                    />
+                </div>
+            </section>
+
+            <section id="catalogo" class="section">
+                <div class="container">
+                    <h2>Catálogo</h2>
+                    <p class="section-intro">
+                        Busca por nombre o filtra por género. Toca una tarjeta
+                        para ver su ficha.
+                    </p>
+
+                    <div class="filters">
+                        <div class="field">
+                            <label for="search">Buscar por nombre</label>
+                            <input
+                                type="search"
+                                id="search"
+                                placeholder="Ej: Faros"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="genre">Género</label>
+                            <select id="genre">
+                                <option value="todos">Todos los géneros</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <p id="count" class="count" aria-live="polite"></p>
+                    <div id="grid" class="card-grid"></div>
+                    <p id="empty" class="empty" hidden>
+                        No encontramos juegos con esa búsqueda. Prueba con otro
+                        nombre o cambia el género.
+                    </p>
+                </div>
+            </section>
+
+            <section id="destacados" class="section alt">
+                <div class="container">
+                    <h2>Destacados del mes</h2>
+                    <p class="section-intro">
+                        Tres títulos que la comunidad más ha guardado.
+                    </p>
+                    <div class="gallery">
+                        <figure>
+                            <img
+                                src="img/mar-de-faros.svg"
+                                alt="Portada de Mar de Faros"
+                                loading="lazy"
+                            />
+                            <figcaption>
+                                Mar de Faros: explora islas y enciende faros.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="img/nebula-runner.svg"
+                                alt="Portada de Nébula Runner"
+                                loading="lazy"
+                            />
+                            <figcaption>
+                                Nébula Runner: velocidad entre planetas.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="img/laberinto-de-cristal.svg"
+                                alt="Portada de Laberinto de Cristal"
+                                loading="lazy"
+                            />
+                            <figcaption>
+                                Laberinto de Cristal: puzzles de luz y reflejos.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resenas" class="section">
+                <div class="container">
+                    <h2>Reseñas de la comunidad</h2>
+                    <div class="reviews">
+                        <article class="review">
+                            <p>
+                                “Me recomendó Reino de Cenizas y lo terminé en
+                                un fin de semana. El filtro por género me ahorró
+                                mucho tiempo.”
+                            </p>
+                            <footer>Camila R. · jugadora de PC</footer>
+                        </article>
+                        <article class="review">
+                            <p>
+                                “Las fichas son claras: sé la plataforma y la
+                                puntuación antes de decidir. Ideal para elegir
+                                juegos para la consola.”
+                            </p>
+                            <footer>Andrés M. · jugador de consola</footer>
+                        </article>
+                        <article class="review">
+                            <p>
+                                “Sugerí un juego desde el formulario y lo
+                                agregaron a la semana. Se siente una comunidad
+                                real.”
+                            </p>
+                            <footer>Laura P. · jugadora móvil</footer>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="section alt">
+                <div class="container narrow">
+                    <h2>Preguntas frecuentes</h2>
+                    <div class="accordion">
+                        <div class="acc-item">
+                            <h3>
+                                <button
+                                    class="acc-btn"
+                                    aria-expanded="false"
+                                    aria-controls="a1"
+                                >
+                                    ¿GameVault vende videojuegos?
+                                </button>
+                            </h3>
+                            <div class="acc-panel" id="a1" hidden>
+                                <p>
+                                    No. Es una biblioteca para descubrir y
+                                    consultar juegos; no tiene carrito ni pagos.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="acc-item">
+                            <h3>
+                                <button
+                                    class="acc-btn"
+                                    aria-expanded="false"
+                                    aria-controls="a2"
+                                >
+                                    ¿Cómo se organizan los juegos?
+                                </button>
+                            </h3>
+                            <div class="acc-panel" id="a2" hidden>
+                                <p>
+                                    Por género, plataforma y puntuación. Puedes
+                                    filtrar por género o buscar por nombre.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="acc-item">
+                            <h3>
+                                <button
+                                    class="acc-btn"
+                                    aria-expanded="false"
+                                    aria-controls="a3"
+                                >
+                                    ¿Puedo sugerir un juego nuevo?
+                                </button>
+                            </h3>
+                            <div class="acc-panel" id="a3" hidden>
+                                <p>
+                                    Sí. Usa el formulario de la sección Contacto
+                                    con el nombre del juego y su plataforma.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="acc-item">
+                            <h3>
+                                <button
+                                    class="acc-btn"
+                                    aria-expanded="false"
+                                    aria-controls="a4"
+                                >
+                                    ¿Los juegos del catálogo son reales?
+                                </button>
+                            </h3>
+                            <div class="acc-panel" id="a4" hidden>
+                                <p>
+                                    Los títulos de esta versión son ficticios y
+                                    las portadas son ilustraciones propias,
+                                    creados con fines académicos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="section">
+                <div class="container narrow">
+                    <h2>Sugiere un juego</h2>
+                    <p class="section-intro">
+                        Cuéntanos qué título falta en la biblioteca.
+                    </p>
+                    <form id="form" novalidate>
+                        <div class="field">
+                            <label for="nombre">Nombre</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                autocomplete="name"
+                                required
+                            />
+                            <small class="error" id="e-nombre"></small>
+                        </div>
+                        <div class="field">
+                            <label for="correo">Correo electrónico</label>
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                autocomplete="email"
+                                required
+                            />
+                            <small class="error" id="e-correo"></small>
+                        </div>
+                        <div class="field">
+                            <label for="juego">Juego que sugieres</label>
+                            <input
+                                type="text"
+                                id="juego"
+                                name="juego"
+                                required
+                            />
+                            <small class="error" id="e-juego"></small>
+                        </div>
+                        <div class="field">
+                            <label for="plataforma">Plataforma</label>
+                            <select id="plataforma" name="plataforma">
+                                <option>PC</option>
+                                <option>PlayStation</option>
+                                <option>Xbox</option>
+                                <option>Nintendo Switch</option>
+                                <option>Móvil</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="mensaje"
+                                >¿Por qué debería estar en GameVault?</label
+                            >
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="4"
+                            ></textarea>
+                        </div>
+                        <button class="btn" type="submit">
+                            Enviar sugerencia
+                        </button>
+                        <p id="ok" class="ok" role="status" hidden></p>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container foot">
+                <p>
+                    © <span id="year"></span> GameVault. Proyecto académico de
+                    Ingeniería Web I.
+                </p>
+                <ul>
+                    <li><a href="#inicio">Volver arriba</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <dialog id="modal" aria-labelledby="m-title">
+            <button class="close" id="mClose" aria-label="Cerrar ficha">
+                ×
+            </button>
+            <img id="m-img" src="" alt="" />
+            <div class="m-body">
+                <h3 id="m-title"></h3>
+                <p id="m-meta" class="meta"></p>
+                <p id="m-desc"></p>
+            </div>
+        </dialog>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
